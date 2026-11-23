@@ -1,0 +1,21 @@
+{
+  "name": "cognifyz-general-task-3-eda",
+  "version": "1.0.0",
+  "description": "Exploratory Data Analysis (EDA) on Enterprise Customer & E-Commerce Intelligence Dataset for Cognifyz Internship",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "eda": "python eda_analysis.py",
+    "test": "node test/eda.test.js"
+  },
+  "keywords": [
+    "cognifyz",
+    "exploratory-data-analysis",
+    "eda",
+    "descriptive-statistics",
+    "outlier-detection",
+    "data-visualization"
+  ],
+  "author": "Cognifyz Intern",
+  "license": "ISC"
+}

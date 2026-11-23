@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusEDA — Exploratory Data Analysis | Cognifyz General Task 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app-layout">
+  
+  <!-- Left Edge Hover Zone (Hover to pop open sidebar) -->
+  <div class="sidebar-hover-zone" id="sidebarHoverZone" aria-hidden="true" title="Hover to view navigation"></div>
+
+  <!-- Left Compact Sidebar (Pure White Styling) -->
+  <aside class="app-sidebar" id="appSidebar" aria-label="Main Navigation">
+    <div class="sidebar-brand">
+      <div class="brand-brand-left">
+        <div class="brand-badge-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title-row">
+            <span class="brand-name">NexusEDA</span>
+          </div>
+          <p class="brand-tagline">Where Data Meets Intelligence</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="sidebar-nav" role="tablist" aria-label="EDA Workspace Views">
+      <button class="nav-item active" role="tab" aria-selected="true" id="nav-overview" data-view="overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Overview</span>
+      </button>
+
+      <button class="nav-item" role="tab" aria-selected="false" id="nav-statistics" data-view="statistics">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Statistics</span>
+      </button>
+
+      <button class="nav-item" role="tab" aria-selected="false" id="nav-visuals" data-view="visuals">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="12 6 12 12 16 14"></polygon>
+        </svg>
+        <span>Visual Analysis</span>
+      </button>
+
+      <button class="nav-item" role="tab" aria-selected="false" id="nav-outliers" data-view="outliers">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Outlier Inspector</span>
+      </button>
+
+      <button class="nav-item" role="tab" aria-selected="false" id="nav-report" data-view="report">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>Executive Report</span>
+      </button>
+
+      <button class="nav-item" role="tab" aria-selected="false" id="nav-powerbi" data-view="powerbi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="13" width="3.5" height="8" rx="1" fill="#f59e0b"></rect>
+          <rect x="8.5" y="9" width="3.5" height="12" rx="1" fill="#f59e0b"></rect>
+          <rect x="14" y="5" width="3.5" height="16" rx="1" fill="#f59e0b"></rect>
+          <rect x="19.5" y="2" width="3.5" height="19" rx="1" fill="#f59e0b"></rect>
+        </svg>
+        <span>Power BI Hub</span>
+      </button>
+    <button class="nav-item" role="tab" aria-selected="false" id="nav-followups" data-view="followups"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18v12H9l-5 4v-4H3z"/><path d="M7 9h10M7 13h6"/></svg><span>Delivery follow-ups</span></button>
+    </nav>
+
+    <!-- Sidebar Footer / Provenance Info -->
+    <div class="sidebar-provenance">
+      <div class="provenance-title">DATASET PROVENANCE</div>
+      <div class="provenance-val">ecommerce_customer_intelligence.csv</div>
+      <div class="provenance-sub">Jan 2025 – Mar 2026 · 1,500 Rows</div>
+      <div class="provenance-badge-row">
+        <span class="status-dot"></span>
+        <span id="provenanceStatus">Live Connected (Port 5070)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sidebar Backdrop for Pop-up / Overlay Mode -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-header" aria-label="Mobile Navigation">
+    <div class="mobile-brand">
+      <span class="brand-name">NexusEDA</span>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Main Work Area -->
+  <div class="app-main-area">
+
+    <!-- Top Telemetry & Active Filters Bar -->
+    <div class="top-context-bar">
+      <div class="context-left">
+        <button class="btn-sidebar-toggle" id="btnToggleSidebar" aria-label="Toggle or pop open sidebar" title="Toggle Sidebar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span>Sidebar</span>
+        </button>
+        <div class="context-info">
+          <span class="context-label">WORKSPACE:</span>
+          <strong class="context-dataset font-mono">ecommerce_customer_intelligence.csv</strong>
+          <span class="context-separator">•</span>
+          <span class="context-range">Coverage: Jan 2025 – Mar 2026 (15 Months)</span>
+        </div>
+      </div>
+
+      <!-- Connected Walkthrough Quick Shortcut -->
+      <div class="evaluator-guide-pill" title="Follow the connected evaluation walkthrough">
+        <span class="guide-tag">Walkthrough:</span>
+        <span>Select Enterprise → Revenue Outliers → Click Order → Export CSV</span>
+      </div>
+    </div>
+
+    <!-- Active Filter Ribbon -->
+    <div class="active-filter-ribbon" id="activeFilterRibbon" style="display: none;">
+      <span class="ribbon-label">Active Filters:</span>
+      <div class="filter-pills" id="activeFilterPills"></div>
+      <button class="btn-clear-filters" id="btnClearAllFilters" type="button">
+        Clear All Filters ✕
+      </button>
+    </div>
+
+    <!-- Error Banner with Retry -->
+    <div class="error-banner" id="errorBanner" style="display: none;" role="alert">
+      <div class="error-msg" id="errorBannerMsg">Unable to reach NexusEDA data services.</div>
+      <button class="btn-retry" id="btnRetryFetch">Retry Connection</button>
+    </div>
+
+    <!-- VIEW 1: OVERVIEW -->
+    <main class="view-panel active" id="view-overview" role="tabpanel">
+      <!-- Overview Subheader -->
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Commerce performance</h1>
+          <p class="view-subtitle">Track revenue, margins, and delivery exceptions across customer segments.</p><button class="sample-link" id="open-sample">Delivery follow-ups <span aria-hidden="true">→</span></button>
+        </div>
+        <!-- Customer Segment Quick Filter -->
+        <div class="segment-filter-group" role="group" aria-label="Filter by Customer Segment">
+          <span class="filter-group-label">Segment:</span>
+          <button class="seg-btn active" data-segment="all">All Segments</button>
+          <button class="seg-btn" data-segment="Enterprise">Enterprise</button>
+          <button class="seg-btn" data-segment="Small Business">Small Business</button>
+          <button class="seg-btn" data-segment="Consumer">Consumer</button>
+        </div>
+      </div>
+
+      <!-- 4 Key Dynamic KPIs -->
+      <section class="kpi-grid" aria-label="Core Performance Indicators">
+        <div class="kpi-card" id="kpiNetRevCard">
+          <div class="kpi-header">
+            <span class="kpi-title">NET REALIZED REVENUE</span>
+            <span class="kpi-badge">USD</span>
+          </div>
+          <div class="kpi-value font-mono" id="kpiNetRev">$8,345,376</div>
+          <div class="kpi-foot" id="kpiGrossCompare">Gross billed: $9,447,405 (Concessions: $1.10M)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">TOTAL TRANSACTIONS</span>
+            <span class="kpi-badge">Orders</span>
+          </div>
+          <div class="kpi-value font-mono" id="kpiTransactions">1,500</div>
+          <div class="kpi-foot" id="kpiTransShare">100% of dataset (Zero missing records)</div>
+        </div>
+
+        <div class="kpi-card" id="kpiMedianCard">
+          <div class="kpi-header">
+            <span class="kpi-title">MEDIAN ORDER VALUE</span>
+            <span class="kpi-badge">Central Tendency</span>
+          </div>
+          <div class="kpi-value font-mono" id="kpiMedianOrder">$2,445.32</div>
+          <div class="kpi-foot">Mean: <strong id="kpiMeanOrder">$5,563.58</strong> (Right Skew +9.53)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">AVG PROFIT MARGIN</span>
+            <span class="kpi-badge text-emerald">Operating Margin</span>
+          </div>
+          <div class="kpi-value font-mono text-emerald" id="kpiAvgMargin">30.8%</div>
+          <div class="kpi-foot">Healthy baseline (Safe discount limit: 20%)</div>
+        </div>
+      </section>
+
+      <!-- Main Chart: Monthly Net Revenue by Segment -->
+      <section class="card chart-card mt-4">
+        <div class="card-header-flex">
+          <div>
+            <h2 class="card-title">Monthly Net Revenue Trajectory by Customer Segment</h2>
+            <p class="card-subtitle">Aggregated cash collections from January 2025 to March 2026 across Enterprise, SMB, and Consumer tiers.</p>
+          </div>
+          <div class="chart-legend-container" id="chartLegend">
+            <span class="legend-item"><span class="legend-dot dot-enterprise"></span>Enterprise</span>
+            <span class="legend-item"><span class="legend-dot dot-smb"></span>Small Business</span>
+            <span class="legend-item"><span class="legend-dot dot-consumer"></span>Consumer</span>
+          </div>
+        </div>
+        <div class="chart-svg-container" id="monthlyChartWrapper">
+          <!-- Dynamically populated SVG Chart -->
+          <svg id="monthlyRevenueSvg" class="interactive-chart" viewBox="0 0 920 320" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+        <div class="chart-caption-bar">
+          <span>Metric: <strong>Net Revenue (USD)</strong></span>
+          <span>Date Range: <strong>2025-01 to 2026-03</strong></span>
+          <span>Hover bars to inspect exact monthly totals</span>
+        </div>
+      </section>
+
+      <!-- Outlier Quick Discovery Bar -->
+      <section class="card outlier-strip-card mt-4">
+        <div class="outlier-strip-inner">
+          <div class="outlier-strip-text">
+            <strong>Anomaly Detection Summary (Tukey IQR & Z-Score):</strong>
+            <span>119 Revenue Outliers (> $12,325.24) · 74 Fulfillment Delays (> 12d) · 10 Negative Margin Orders</span>
+          </div>
+          <button class="btn btn-teal-outline" id="btnExploreOutliersFromOverview">
+            Open Outlier Inspector →
+          </button>
+        </div>
+      </section>
+
+      <!-- 4 Concise Business Questions with Direct Links -->
+      <section class="business-questions-section mt-4">
+        <h2 class="section-title">Key Strategic Questions Answered via Exploratory Analysis</h2>
+        <div class="questions-grid">
+          <!-- Question 1 -->
+          <div class="card question-card">
+            <div class="question-header">
+              <span class="question-pill">Q1 · Margin Protection</span>
+              <h3 class="question-headline">What is the safe discounting threshold before profit turns negative?</h3>
+            </div>
+            <div class="question-body">
+              <p>Discounts up to 12% preserve 29.4%–36.5% margins. Between 20%–30%, margins degrade to 14.6%. <strong>Discounts &gt; 30% collapse into net operating losses (-23.8% avg margin).</strong></p>
+              <div class="policy-recommendation">
+                <strong>Policy:</strong> Enforce hard 20% checkout ceiling in sales software.
+              </div>
+            </div>
+            <div class="question-footer">
+              <button class="btn-link-action" data-nav-target="visuals" data-focus="fig5">
+                Inspect Discount vs Margin Scatter Plot →
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="card question-card">
+            <div class="question-header">
+              <span class="question-pill">Q2 · Segment Economics</span>
+              <h3 class="question-headline">Which customer segment generates the highest economic value?</h3>
+            </div>
+            <div class="question-body">
+              <p><strong>Enterprise drives 53.2% of revenue</strong> ($4.44M) across only 223 transactions (14.9% order volume). Enterprise Average Order Value is <strong>$19,906.82</strong> (8.6x Consumer AOV).</p>
+              <div class="policy-recommendation">
+                <strong>Policy:</strong> Deploy Dedicated Account Executives for Enterprise AI Hardware.
+              </div>
+            </div>
+            <div class="question-footer">
+              <button class="btn-link-action" id="btnFilterEnterpriseShortcut">
+                Inspect Enterprise Outlier Transactions →
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="card question-card">
+            <div class="question-header">
+              <span class="question-pill">Q3 · Logistics & Retention</span>
+              <h3 class="question-headline">How does delivery duration impact customer rating and churn?</h3>
+            </div>
+            <div class="question-body">
+              <p>Fast fulfillment (&le; 3 days) achieves 4.59-star satisfaction and 0.18 churn risk score. <strong>Delays past 7 days collapse ratings to 2.57 stars and spike churn risk score to 0.58.</strong></p>
+              <div class="policy-recommendation">
+                <strong>Policy:</strong> Automated day-5 proactive communication & freight vouchers.
+              </div>
+            </div>
+            <div class="question-footer">
+              <button class="btn-link-action" data-nav-target="visuals" data-focus="fig6">
+                Inspect Delivery vs Churn Score Chart →
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="card question-card">
+            <div class="question-header">
+              <span class="question-pill">Q4 · Geographic Hubs</span>
+              <h3 class="question-headline">What are the primary geographic commercial hubs and efficiencies?</h3>
+            </div>
+            <div class="question-body">
+              <p><strong>Bengaluru ($2.14M), Mumbai ($1.59M), and Delhi ($1.40M)</strong> generate 61.5% of total gross sales. Pune delivered fastest turnaround (4.16 days); Kolkata had longest transit (4.89 days).</p>
+              <div class="policy-recommendation">
+                <strong>Policy:</strong> Establish regional Western hub node to balance Eastern logistics.
+              </div>
+            </div>
+            <div class="question-footer">
+              <button class="btn-link-action" data-nav-target="statistics" data-focus="city-table">
+                View Geographic Frequencies in Statistics →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VIEW 2: STATISTICS -->
+    <main class="view-panel" id="view-statistics" role="tabpanel" hidden>
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Parametric & Non-Parametric Descriptive Statistics</h1>
+          <p class="view-subtitle">Examine central tendencies, dispersion, quartiles, and skewness across all continuous and discrete dataset features.</p>
+        </div>
+        <div class="stats-search-wrapper">
+          <input type="text" id="statsSearchInput" class="form-input" placeholder="Search numerical features..." aria-label="Search numerical features">
+        </div>
+      </div>
+
+      <!-- Interactive Net Revenue Skewness Explainer Card -->
+      <section class="card mb-4 skew-highlight-card" id="skewExplainerCard">
+        <div class="skew-card-header">
+          <div>
+            <span class="badge-accent">Featured Feature Deep-Dive</span>
+            <h2 class="card-title mt-1">Understanding Net Revenue Right-Skewness (+9.526)</h2>
+            <p class="card-subtitle">Why the Mean ($5,563.58) sits 2.27x above the Median ($2,445.32).</p>
+          </div>
+          <button class="btn btn-sm btn-outline" id="btnToggleSkewDetails">View Distribution Details</button>
+        </div>
+        <div class="skew-visual-row">
+          <div class="skew-metric-box">
+            <span class="skew-metric-label">Median (50th Percentile)</span>
+            <span class="skew-metric-val font-mono">$2,445.32</span>
+            <span class="skew-metric-sub">Typical commercial customer order</span>
+          </div>
+          <div class="skew-metric-divider">vs</div>
+          <div class="skew-metric-box">
+            <span class="skew-metric-label">Arithmetic Mean</span>
+            <span class="skew-metric-val font-mono text-amber">$5,563.58</span>
+            <span class="skew-metric-sub">Pulled upward by Enterprise tail</span>
+          </div>
+          <div class="skew-metric-divider">→</div>
+          <div class="skew-metric-box">
+            <span class="skew-metric-label">Tukey Upper Fence</span>
+            <span class="skew-metric-val font-mono text-teal">$12,325.24</span>
+            <span class="skew-metric-sub">119 Orders Exceed Threshold</span>
+          </div>
+        </div>
+        <p class="skew-narrative mt-3">
+          <strong>Statistical Explanation:</strong> 75% of all orders are under $5,570.18 (Q3). However, a concentrated cohort of 119 Enterprise purchases (up to $200,376 for HPC clusters) creates a long right tail with skewness of +9.526 and excess kurtosis of +111.53. In skewed business metrics, the <strong>median is the truthful measure of typical transaction scale</strong>.
+        </p>
+      </section>
+
+      <!-- Numerical Features Table -->
+      <section class="card table-card mb-4">
+        <div class="card-header">
+          <h2 class="card-title">Comprehensive Numerical Features Summary (N = 1,500)</h2>
+          <span class="card-caption">All measures computed reproducibly via Python SciPy & Pandas standard formulas.</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table" id="descriptiveStatsTable">
+            <thead>
+              <tr>
+                <th>Feature Name</th>
+                <th>Count</th>
+                <th>Missing</th>
+                <th>Mean</th>
+                <th>Median</th>
+                <th>Std Dev</th>
+                <th>Min</th>
+                <th>Q1 (25%)</th>
+                <th>Q3 (75%)</th>
+                <th>Max</th>
+                <th>Range</th>
+                <th>IQR</th>
+                <th>Skewness</th>
+                <th>Kurtosis</th>
+              </tr>
+            </thead>
+            <tbody id="statsTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Categorical Frequencies Grid -->
+      <section class="categorical-grid" id="city-table">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Customer Segment Breakdown</h3>
+            <span class="card-caption">Revenue volume & share</span>
+          </div>
+          <div class="card-body" id="segmentBars"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Product Category Breakdown</h3>
+            <span class="card-caption">Order volume & margins</span>
+          </div>
+          <div class="card-body" id="categoryBars"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Commercial Hub City Breakdown</h3>
+            <span class="card-caption">Revenue & satisfaction</span>
+          </div>
+          <div class="card-body" id="cityBars"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Payment Settlement Channels</h3>
+            <span class="card-caption">Channel share</span>
+          </div>
+          <div class="card-body" id="paymentBars"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VIEW 3: VISUAL ANALYSIS -->
+    <main class="view-panel" id="view-followups" role="tabpanel" aria-labelledby="nav-followups" hidden>
+        <div class="view-header"><div><h1 class="view-title">Delivery follow-ups</h1><p class="view-subtitle">Investigate simulated service cases linked to orders delivered after seven days.</p></div></div>
+        <section class="sample-panel" aria-label="Delivery follow-ups sample">
+          <div class="sample-toolbar">
+            <label>Segment<select id="sample-segment"><option value="">All segments</option></select></label>
+            <label>Issue<select id="sample-group"><option value="">All issues</option></select></label>
+            <label>Outcome<select id="sample-outcome"><option value="">All outcomes</option></select></label>
+            <button id="sample-export" disabled>Export filtered CSV</button>
+          </div>
+          <div class="sample-summary" aria-live="polite"></div>
+          <div class="sample-scroll" tabindex="0" aria-label="Filtered sample records"><table class="sample-table"><thead><tr><th scope="col">Order ID</th><th scope="col">Segment</th><th scope="col">Issue</th><th scope="col">Outcome</th><th scope="col">Delivery days</th></tr></thead><tbody></tbody></table></div>
+        </section>
+      </main>
+      <main class="view-panel" id="view-visuals" role="tabpanel" hidden>
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Visual Analytics Gallery</h1>
+          <p class="view-subtitle">Six rigorous graphical analyses investigating distributions, correlations, outliers, and operational trade-offs.</p>
+        </div>
+        <div class="gallery-benchmark-badge" id="galleryBenchmarkBadge">
+          <span class="badge-info">ℹ Figures reflect full 1,500-order benchmark</span>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Figure 1 -->
+        <div class="card gallery-card" id="fig1">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 1</span>
+            <h2 class="gallery-title">Net Revenue Distribution & Kernel Density Estimation</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig1_revenue_distribution.png" alt="Distribution of Net Revenue with KDE plot" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>X-Axis:</strong> Net Revenue (USD)</span>
+              <span><strong>Y-Axis:</strong> Order Frequency / KDE Density</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Highly positive right-skew (+9.526) with 75% of purchases below $5,570.18, heavily distorted by multi-unit enterprise server deployments.
+            </p>
+            <details class="gallery-details">
+              <summary>View Summary Data</summary>
+              <div class="gallery-summary-text">
+                Mean: $5,563.58 · Median: $2,445.32 · Q1: $1,066.80 · Q3: $5,570.18 · Max: $200,376.00 · IQR: $4,503.38.
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig1_revenue_distribution.png" data-title="Figure 1: Net Revenue Distribution">Zoom Figure</button>
+            <a href="/figures/fig1_revenue_distribution.png" download="fig1_revenue_distribution.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+
+        <!-- Figure 2 -->
+        <div class="card gallery-card" id="fig2">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 2</span>
+            <h2 class="gallery-title">Pearson Correlation Matrix Heatmap</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig2_correlation_heatmap.png" alt="Pearson Correlation Heatmap across all numerical features" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>Matrix:</strong> 10 Numerical Features</span>
+              <span><strong>Metric:</strong> Pearson Correlation Coefficient (r)</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Strong inverse association between Delivery Duration and Rating (\(r = -0.71\)), and strong positive association between Delivery Delay and Churn Risk Score (\(r = +0.64\)).
+            </p>
+            <details class="gallery-details">
+              <summary>View Key Coefficients</summary>
+              <div class="gallery-summary-text">
+                Rating vs Churn: -0.84 · Delivery vs Rating: -0.71 · Delivery vs Churn: +0.64 · Discount vs Margin: -0.58 · Net Revenue vs Quantity: +0.62.
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig2_correlation_heatmap.png" data-title="Figure 2: Correlation Matrix">Zoom Figure</button>
+            <a href="/figures/fig2_correlation_heatmap.png" download="fig2_correlation_heatmap.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+
+        <!-- Figure 3 -->
+        <div class="card gallery-card" id="fig3">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 3</span>
+            <h2 class="gallery-title">Tukey Outlier Boxplots & Boundary Analysis</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig3_outlier_boxplots.png" alt="Outlier Boxplots for Revenue, Delivery Time, and Margin" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>Features:</strong> Revenue, Fulfillment, Margin</span>
+              <span><strong>Fences:</strong> Q1 - 1.5×IQR to Q3 + 1.5×IQR</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Visualizes 119 revenue outliers above $12,325.24, 74 logistics delays beyond 12 days, and 10 negative margin transactions below 0%.
+            </p>
+            <details class="gallery-details">
+              <summary>View Fence Boundaries</summary>
+              <div class="gallery-summary-text">
+                Revenue Upper Fence: $12,325.24 (119 orders) · Delivery Upper Fence: 12.0 Days (74 orders) · Negative Margin Cutoff: &lt; 0.0% (10 orders).
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig3_outlier_boxplots.png" data-title="Figure 3: Outlier Boxplots">Zoom Figure</button>
+            <a href="/figures/fig3_outlier_boxplots.png" download="fig3_outlier_boxplots.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+
+        <!-- Figure 4 -->
+        <div class="card gallery-card" id="fig4">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 4</span>
+            <h2 class="gallery-title">Monthly Revenue Trends by Customer Segment</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig4_monthly_revenue_trend.png" alt="Monthly Net Revenue Trends grouped by Customer Segment" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>X-Axis:</strong> Month (Jan 2025 to Mar 2026)</span>
+              <span><strong>Y-Axis:</strong> Net Realized Revenue ($ USD)</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Enterprise orders dictate aggregate revenue spikes in March, July, and October 2025 corresponding to corporate fiscal budget cycles.
+            </p>
+            <details class="gallery-details">
+              <summary>View Segment Shares</summary>
+              <div class="gallery-summary-text">
+                Enterprise: $4,439,221 (53.2%) · Small Business: $2,583,467 (31.0%) · Consumer: $1,322,688 (15.8%).
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig4_monthly_revenue_trend.png" data-title="Figure 4: Monthly Revenue Trend">Zoom Figure</button>
+            <a href="/figures/fig4_monthly_revenue_trend.png" download="fig4_monthly_revenue_trend.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+
+        <!-- Figure 5 -->
+        <div class="card gallery-card" id="fig5">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 5</span>
+            <h2 class="gallery-title">Discount Concession vs Profit Margin Scatter</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig5_discount_vs_margin_scatter.png" alt="Scatter plot of Discount Percent versus Profit Margin Percent" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>X-Axis:</strong> Discount Offered (%)</span>
+              <span><strong>Y-Axis:</strong> Realized Profit Margin (%)</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Distinct profitability inflection: transactions with discounts exceeding 30% inevitably result in negative operating margins (up to -32.8% loss).
+            </p>
+            <details class="gallery-details">
+              <summary>View Tiered Margins</summary>
+              <div class="gallery-summary-text">
+                0% Discount: 36.5% Margin · 1-10%: 31.2% Margin · 11-20%: 29.4% Margin · 21-30%: 14.6% Margin · &gt;30%: -23.8% Margin (100% loss rate).
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig5_discount_vs_margin_scatter.png" data-title="Figure 5: Discount vs Margin">Zoom Figure</button>
+            <a href="/figures/fig5_discount_vs_margin_scatter.png" download="fig5_discount_vs_margin_scatter.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+
+        <!-- Figure 6 -->
+        <div class="card gallery-card" id="fig6">
+          <div class="gallery-card-header">
+            <span class="gallery-number">Figure 6</span>
+            <h2 class="gallery-title">Delivery Duration vs Churn Risk Score & Rating</h2>
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="/figures/fig6_delivery_vs_churn.png" alt="Delivery Duration plotted against Churn Risk Score and Customer Satisfaction" loading="lazy">
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-axes">
+              <span><strong>X-Axis:</strong> Delivery Duration (Days)</span>
+              <span><strong>Y-Axis:</strong> Churn Risk Score & Star Rating</span>
+            </div>
+            <p class="gallery-finding">
+              <strong>Finding:</strong> Strong non-linear threshold at 7 transit days where satisfaction plummets below 3.0 stars and churn risk score spikes from 0.18 to 0.58+.
+            </p>
+            <details class="gallery-details">
+              <summary>View Delivery Impact Tiers</summary>
+              <div class="gallery-summary-text">
+                1-3 Days: 4.59 ★, 0.18 Churn Score · 4-7 Days: 3.98 ★, 0.28 Churn Score · 8-14 Days: 2.57 ★, 0.58 Churn Score · &gt;14 Days: 1.12 ★, 0.92 Churn Score.
+              </div>
+            </details>
+          </div>
+          <div class="gallery-card-foot">
+            <button class="btn btn-sm btn-outline btn-zoom" data-src="/figures/fig6_delivery_vs_churn.png" data-title="Figure 6: Delivery vs Churn">Zoom Figure</button>
+            <a href="/figures/fig6_delivery_vs_churn.png" download="fig6_delivery_vs_churn.png" class="btn btn-sm btn-outline">Download PNG</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- VIEW 4: OUTLIER INSPECTOR -->
+    <main class="view-panel" id="view-outliers" role="tabpanel" hidden>
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Dataset & Outlier Inspector</h1>
+          <p class="view-subtitle">Inspect anomaly records with exact threshold fences, delta calculations, search, sorting, and full CSV export.</p>
+        </div>
+        <div class="inspector-actions">
+          <button class="btn btn-teal" id="btnExportFilteredCsv">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span id="exportBtnLabel">Export Filtered CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Outlier Category Selector Pills -->
+      <div class="outlier-filter-toolbar">
+        <div class="outlier-pills" role="radiogroup" aria-label="Select Outlier Filter Rule">
+          <button class="outlier-pill active" data-rule="all_records">
+            <span>All Records</span>
+            <span class="pill-count" id="countAllRecords">1,500</span>
+          </button>
+          <button class="outlier-pill" data-rule="all_anomalies">
+            <span>Any Anomaly</span>
+            <span class="pill-count text-amber" id="countAnyAnomaly">190</span>
+          </button>
+          <button class="outlier-pill" data-rule="revenue" id="pillRevenueOutliers">
+            <span>Revenue &gt; $12,325.24</span>
+            <span class="pill-count text-teal" id="countRevOutliers">119</span>
+          </button>
+          <button class="outlier-pill" data-rule="delivery">
+            <span>Delivery &gt; 12.0d</span>
+            <span class="pill-count" id="countDelivOutliers">74</span>
+          </button>
+          <button class="outlier-pill" data-rule="margin">
+            <span>Negative Margin &lt; 0%</span>
+            <span class="pill-count text-rose" id="countMarginOutliers">10</span>
+          </button>
+          <button class="outlier-pill" data-rule="zscore">
+            <span>Z-Score |Z| &gt; 3.0</span>
+            <span class="pill-count" id="countZScoreOutliers">15</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search & Context Strip -->
+      <div class="inspector-controls-bar">
+        <div class="search-input-group">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="inspectorSearchInput" class="form-input" placeholder="Search order ID, customer, city, product..." aria-label="Search dataset">
+        </div>
+
+        <div class="inspector-meta-status">
+          <span>Showing <strong id="displayedRange">1 - 25</strong> of <strong id="totalMatchingCount">1,500</strong> matching orders</span>
+          <span class="sort-indicator" id="currentSortIndicator">Sorted by: Order_ID (asc)</span>
+        </div>
+      </div>
+
+      <!-- Dataset Table -->
+      <section class="card table-card">
+        <div class="table-responsive">
+          <table class="data-table" id="datasetTable">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="Order_ID">Order ID <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="Customer_Segment">Segment <span class="sort-icon">↕</span></th>
+                <th>Product Category & Item</th>
+                <th class="sortable text-right" data-sort="Net_Revenue_USD">Net Revenue <span class="sort-icon">↕</span></th>
+                <th class="text-right">Tukey Fence Delta</th>
+                <th class="sortable text-right" data-sort="Profit_Margin_Percent">Margin <span class="sort-icon">↕</span></th>
+                <th class="sortable text-right" data-sort="Delivery_Time_Days">Transit <span class="sort-icon">↕</span></th>
+                <th>Anomaly Reasons & Flags</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="datasetTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State View -->
+        <div class="empty-state" id="inspectorEmptyState" style="display: none;">
+          <div class="empty-state-icon">🔍</div>
+          <h3>No matching orders found</h3>
+          <p id="emptyStateMsg">No orders match the current filter and search criteria.</p>
+          <button class="btn btn-sm btn-outline mt-3" id="btnResetInspectorFilters">Reset Filters to Default</button>
+        </div>
+
+        <!-- Pagination Bar -->
+        <div class="pagination-footer">
+          <div class="pagination-info">
+            Page <span id="currentPageNum">1</span> of <span id="totalPagesNum">60</span>
+          </div>
+          <div class="pagination-buttons">
+            <button class="btn btn-sm btn-outline" id="btnPrevPage" disabled>← Previous</button>
+            <button class="btn btn-sm btn-outline" id="btnNextPage">Next →</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VIEW 5: EXECUTIVE REPORT -->
+    <main class="view-panel" id="view-report" role="tabpanel" hidden>
+      <div class="view-header report-header-print">
+        <div>
+          <h1 class="view-title">Executive EDA Report & Governance Memo</h1>
+          <p class="view-subtitle">Cognifyz Web Development Internship — General Task 3: Exploratory Data Analysis</p>
+        </div>
+        <div class="report-actions">
+          <button class="btn btn-outline" id="btnPrintReport">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Save as PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Report Paper Container -->
+      <article class="report-paper">
+        <header class="report-doc-header">
+          <div class="report-brand-row">
+            <span class="report-brand-name">NexusEDA</span>
+            <span class="report-tagline">Where Data Meets Intelligence</span>
+          </div>
+          <div class="report-meta-grid">
+            <div><strong>Document:</strong> Executive Findings & Policy Roadmap</div>
+            <div><strong>Author:</strong> Internship Participant</div>
+            <div><strong>Dataset:</strong> ecommerce_customer_intelligence.csv (1,500 records)</div>
+            <div><strong>Status:</strong> Approved · Reproducible via Python 3.14 & Node.js</div>
+          </div>
+        </header>
+
+        <section class="report-section">
+          <h2>1. Executive Summary & Core Quantitative Benchmarks</h2>
+          <p>
+            An exploratory data analysis (EDA) was performed on a multi-variable commercial intelligence dataset containing <strong>1,500 transactions</strong> across 8 metropolitan commercial hubs, spanning from January 2025 to March 2026. The dataset captures both <strong>Gross Invoiced Order Amount ($9,447,405 USD)</strong> and <strong>Final Net Cash Collected ($8,345,376 USD)</strong> after discounting, representing purchases across five strategic technology product categories and three customer segments (<em>Enterprise</em>, <em>Small Business</em>, <em>Consumer</em>).
+          </p>
+          <div class="report-stat-callout-grid">
+            <div class="report-callout">
+              <span class="callout-lbl">Gross Order Volume</span>
+              <span class="callout-val font-mono">$9,447,405</span>
+              <span class="callout-sub">Mean: $6,298.27 · Median: $2,680.06</span>
+            </div>
+            <div class="report-callout">
+              <span class="callout-lbl">Net Realized Revenue</span>
+              <span class="callout-val font-mono">$8,345,376</span>
+              <span class="callout-sub">Mean: $5,563.58 · Median: $2,445.32</span>
+            </div>
+            <div class="report-callout">
+              <span class="callout-lbl">Realized Margin</span>
+              <span class="callout-val font-mono text-emerald">30.79%</span>
+              <span class="callout-sub">Std Dev: 20.55% · Safe Ceiling: 20%</span>
+            </div>
+            <div class="report-callout">
+              <span class="callout-lbl">Revenue Outliers</span>
+              <span class="callout-val font-mono text-teal">119 Orders</span>
+              <span class="callout-sub">Tukey Fence: &gt; $12,325.24</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="report-section">
+          <h2>2. Source of Truth & Discrepancy Resolution</h2>
+          <p>
+            Statistical verification directly on the source dataset (<code>ecommerce_customer_intelligence.csv</code>) establishes the exact parametric and non-parametric parameters for Net Revenue:
+          </p>
+          <ul class="report-bullets">
+            <li><strong>First Quartile (\(Q_1\)):</strong> $1,066.80 USD</li>
+            <li><strong>Third Quartile (\(Q_3\)):</strong> $5,570.18 USD</li>
+            <li><strong>Interquartile Range (\(IQR\)):</strong> $5,570.18 - $1,066.80 = <strong>$4,503.38 USD</strong></li>
+            <li><strong>Tukey Upper Fence Calculation:</strong>
+              \[Q_3 + 1.5 \times IQR = \$5,570.18 + (1.5 \times \$4,503.38) = \mathbf{\$12,325.24\text{ USD}}\]
+            </li>
+            <li><strong>Affected Outliers:</strong> Exactly <strong>119 transactions</strong> (7.93% of the dataset) exceed $12,325.24.</li>
+          </ul>
+          <p class="report-note">
+            <em>Resolution:</em> The earlier transcription typo listing \(Q_3\) as $5,688.38 has been reconciled against the CSV source of truth. All calculations, UI filters, inspectors, and tests now align on <strong>$12,325.24</strong> and <strong>119 matching records</strong>.
+          </p>
+        </section>
+
+        <section class="report-section">
+          <h2>3. Key Business Insights & Statistical Associations</h2>
+          <div class="report-finding-box">
+            <h3>Finding 1: Discounting Tipping Point and Margin Destruction</h3>
+            <p>
+              Pearson correlation reveals a moderate inverse statistical association (\(r = -0.58\)) between discount percentages and realized margins. Discounts between 0% and 12% yield healthy 29.4% to 36.5% margins. When discounts exceed 30%, transactions trigger severe negative margins (-23.77% average operating loss).
+            </p>
+          </div>
+          <div class="report-finding-box mt-3">
+            <h3>Finding 2: Enterprise Dominance & Average Order Value (AOV) vs LTV</h3>
+            <p>
+              The Enterprise customer segment accounts for <strong>53.19% of total gross order volume ($4,439,221 USD)</strong> across only 223 transactions (14.87% of order count). The Enterprise Average Order Value is <strong>$19,906.82</strong>, which is 8.57x higher than Consumer ($2,322.01). Note: Single-order AOV is analyzed here; lifetime value (LTV) requires tracking repeat multi-year contracts.
+            </p>
+          </div>
+          <div class="report-finding-box mt-3">
+            <h3>Finding 3: Logistics Transit Duration and Churn Risk Score</h3>
+            <p>
+              Delivery time correlates strongly with customer ratings (\(r = -0.71\)) and predicted churn risk score (\(r = +0.64\)). Deliveries completed within 3 days achieve 4.59 stars and 0.18 churn risk score. Delays exceeding 7 days collapse ratings to 2.57 stars and elevate churn risk score to 0.58.
+            </p>
+          </div>
+        </section>
+
+        <section class="report-section">
+          <h2>4. Strategic Governance & Policy Roadmap</h2>
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Strategic Pillar</th>
+                <th>Operational Policy Action</th>
+                <th>Expected Commercial Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Margin Governance</strong></td>
+                <td>Hard-code 20% discount limit in billing gateways; VP approval required for concessions &gt; 20%.</td>
+                <td>Eliminates 100% of negative margin orders and preserves ~$28k in annual operating margin.</td>
+              </tr>
+              <tr>
+                <td><strong>Sales Execution</strong></td>
+                <td>Align Dedicated Account Executives to high-AOV Enterprise accounts in AI Hardware and Cloud SaaS.</td>
+                <td>Maximizes high-leverage order capture ($19.9k AOV per transaction).</td>
+              </tr>
+              <tr>
+                <td><strong>Logistics SLA</strong></td>
+                <td>Trigger automated proactive notifications & shipping vouchers whenever an order remains in transit on day 5.</td>
+                <td>Reduces customer churn propensity score by an estimated 70% on delayed parcels.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="report-section">
+          <h2>5. Methodology, Provenance, & Analytical Limitations</h2>
+          <ul class="report-bullets">
+            <li><strong>Provenance:</strong> Source dataset <code>data/ecommerce_customer_intelligence.csv</code> verified with zero missing values across 1,500 records.</li>
+            <li><strong>Parametric Metrics:</strong> Computed using Python 3.14 SciPy & Pandas standard libraries.</li>
+            <li><strong>Non-Parametric Metrics:</strong> Quartiles computed via linear interpolation; Tukey fences computed as \([Q_1 - 1.5 \times IQR, Q_3 + 1.5 \times IQR]\).</li>
+            <li><strong>Limitations:</strong> Churn Risk Score is a model-derived predictive propensity metric (0.00 to 1.00), not an observed contractual churn event. Observed relationships denote statistical associations rather than controlled experimental trials.</li>
+          </ul>
+        </section>
+
+        <footer class="report-doc-footer">
+          <p>© 2026 Cognifyz Technologies Internship Deliverable · NexusEDA Analytics Platform</p>
+        </footer>
+      </article>
+    </main>
+
+    <!-- VIEW 6: POWER BI INTERACTIVE WORKSPACE -->
+    <main class="view-panel" id="view-powerbi" role="tabpanel" hidden>
+      <div class="view-header">
+        <div>
+          <div class="powerbi-title-badge-row">
+            <span class="badge-powerbi">Microsoft Power BI Embedded</span>
+            <span class="badge-mini" style="background-color: var(--teal-50); color: var(--teal-700); border: 1px solid var(--teal-200);">Cloud Integrated</span>
+          </div>
+          <h1 class="view-title mt-1">Power BI Interactive Analytics Workspace</h1>
+          <p class="view-subtitle">Explore live embedded Microsoft Power BI dashboards, switch cloud report URLs, or copy production DAX measures for Power BI Desktop.</p>
+        </div>
+        <div class="powerbi-header-actions">
+          <a href="https://app.powerbi.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <span>Power BI Service ↗</span>
+          </a>
+          <a href="/data/ecommerce_customer_intelligence.csv" download="ecommerce_customer_intelligence.csv" class="btn btn-teal">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download CSV for Power BI</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Power BI Report Interactive Frame Card -->
+      <section class="card powerbi-embed-card mb-4">
+        <div class="powerbi-toolbar">
+          <div class="powerbi-input-group">
+            <span class="powerbi-input-label">Report URL:</span>
+            <input type="url" id="powerBiUrlInput" class="form-input powerbi-url-input" placeholder="Paste your Power BI Publish-to-Web embed link..." value="https://app.powerbi.com/view?r=eyJrIjoiYTZkOTQxZTAtOWFlZi00YmU0LWJmMTItMTJiYTUwNTM0OWYyIiwidCI6IjViZWE4ZTBiLTY4YzYtNGRlYS1hYTYxLTc2Y2FmNGFjOGFhYyIsImMiOjF9">
+          </div>
+          <div class="powerbi-toolbar-buttons">
+            <button class="btn btn-sm btn-teal" id="btnLoadPowerBi">Load Report</button>
+            <button class="btn btn-sm btn-outline" id="btnResetPowerBiSample">Reset Sample</button>
+            <button class="btn btn-sm btn-outline" id="btnFullscreenPowerBi" title="View Fullscreen">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+              </svg>
+              <span>Fullscreen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Embedded Power BI Viewport -->
+        <div class="powerbi-viewport" id="powerBiViewport">
+          <iframe 
+            id="powerBiIframe"
+            src="https://app.powerbi.com/view?r=eyJrIjoiYTZkOTQxZTAtOWFlZi00YmU0LWJmMTItMTJiYTUwNTM0OWYyIiwidCI6IjViZWE4ZTBiLTY4YzYtNGRlYS1hYTYxLTc2Y2FmNGFjOGFhYyIsImMiOjF9" 
+            frameborder="0" 
+            allowFullScreen="true" 
+            class="powerbi-frame"
+            title="Microsoft Power BI Interactive Report">
+          </iframe>
+        </div>
+
+        <div class="powerbi-frame-caption">
+          <span>Interactive Tip: Click any visual element or segment slicer within the Power BI canvas to cross-filter charts dynamically.</span>
+        </div>
+      </section>
+
+      <!-- DAX Formula Studio & Integration Instructions -->
+      <section class="card mb-4">
+        <div class="card-header">
+          <h2 class="card-title">Production DAX Measure Formulas for Power BI Desktop</h2>
+          <span class="card-caption">Pre-written, validated DAX expressions ready to paste directly into your Power BI model.</span>
+        </div>
+        <div class="dax-grid mt-3">
+          <!-- Measure 1 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">1. Total Net Realized Revenue</span>
+              <button class="btn-copy-dax" data-dax="Total Net Revenue = SUM('ecommerce_customer_intelligence'[Net_Revenue_USD])">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Total Net Revenue = 
+SUM('ecommerce_customer_intelligence'[Net_Revenue_USD])</code></pre>
+          </div>
+
+          <!-- Measure 2 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">2. Median Order Value</span>
+              <button class="btn-copy-dax" data-dax="Median Order Value = MEDIAN('ecommerce_customer_intelligence'[Net_Revenue_USD])">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Median Order Value = 
+MEDIAN('ecommerce_customer_intelligence'[Net_Revenue_USD])</code></pre>
+          </div>
+
+          <!-- Measure 3 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">3. Tukey Revenue Upper Fence ($12,325.24)</span>
+              <button class="btn-copy-dax" data-dax="Tukey Revenue Fence = 
+VAR Q1 = PERCENTILE.INC('ecommerce_customer_intelligence'[Net_Revenue_USD], 0.25)
+VAR Q3 = PERCENTILE.INC('ecommerce_customer_intelligence'[Net_Revenue_USD], 0.75)
+VAR IQR = Q3 - Q1
+RETURN Q3 + (1.5 * IQR)">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Tukey Revenue Fence = 
+VAR Q1 = PERCENTILE.INC('ecommerce_customer_intelligence'[Net_Revenue_USD], 0.25)
+VAR Q3 = PERCENTILE.INC('ecommerce_customer_intelligence'[Net_Revenue_USD], 0.75)
+VAR IQR = Q3 - Q1
+RETURN Q3 + (1.5 * IQR)</code></pre>
+          </div>
+
+          <!-- Measure 4 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">4. Revenue Outlier Classification Flag</span>
+              <button class="btn-copy-dax" data-dax="Is Revenue Outlier = 
+IF(
+    SELECTEDVALUE('ecommerce_customer_intelligence'[Net_Revenue_USD]) > 12325.24, 
+    &quot;Revenue Outlier&quot;, 
+    &quot;Normal Transaction&quot;
+)">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Is Revenue Outlier = 
+IF(
+    SELECTEDVALUE('ecommerce_customer_intelligence'[Net_Revenue_USD]) > 12325.24, 
+    "Revenue Outlier", 
+    "Normal Transaction"
+)</code></pre>
+          </div>
+
+          <!-- Measure 5 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">5. Average Realized Margin (%)</span>
+              <button class="btn-copy-dax" data-dax="Avg Realized Margin = AVERAGE('ecommerce_customer_intelligence'[Profit_Margin_Percent])">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Avg Realized Margin = 
+AVERAGE('ecommerce_customer_intelligence'[Profit_Margin_Percent])</code></pre>
+          </div>
+
+          <!-- Measure 6 -->
+          <div class="dax-card">
+            <div class="dax-card-header">
+              <span class="dax-title">6. Predicted Churn Risk Score</span>
+              <button class="btn-copy-dax" data-dax="Avg Churn Risk Score = AVERAGE('ecommerce_customer_intelligence'[Churn_Risk_Score])">Copy DAX</button>
+            </div>
+            <pre class="dax-code"><code>Avg Churn Risk Score = 
+AVERAGE('ecommerce_customer_intelligence'[Churn_Risk_Score])</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step-by-Step Power BI Publishing Guide -->
+      <section class="card mb-4">
+        <h3 class="card-title">How to Connect Power BI Desktop & Publish to this Web Workspace</h3>
+        <ol class="report-bullets mt-3">
+          <li><strong>Step 1 (Ingest Dataset):</strong> In Power BI Desktop, click <strong>Get Data &rarr; Text/CSV</strong> and select <code>data/ecommerce_customer_intelligence.csv</code>.</li>
+          <li><strong>Step 2 (Add Measures):</strong> Click <strong>New Measure</strong> on the Modeling tab and paste any of the 6 DAX expressions above.</li>
+          <li><strong>Step 3 (Publish to Power BI Service):</strong> Click <strong>Home &rarr; Publish</strong> and upload to your Power BI workspace.</li>
+          <li><strong>Step 4 (Embed in NexusEDA):</strong> In Power BI Service, click <strong>File &rarr; Embed report &rarr; Publish to web (public)</strong>, copy the generated URL, paste it into the Report URL bar above, and click <strong>"Load Report"</strong>!</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <!-- Order Detail Deep-Dive Modal / Drawer -->
+  <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalOrderTitle" hidden>
+    <div class="modal-drawer">
+      <div class="modal-header">
+        <div>
+          <span class="badge-accent">Outlier Transaction Deep-Dive</span>
+          <h2 class="modal-title font-mono" id="modalOrderTitle">ORD-10012</h2>
+        </div>
+        <button class="modal-close" id="btnCloseOrderModal" aria-label="Close transaction details">✕</button>
+      </div>
+
+      <div class="modal-body" id="modalOrderBody">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btnDoneOrderModal">Close Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-Size Chart Zoom Modal -->
+  <div class="modal-overlay" id="imageZoomModal" role="dialog" aria-modal="true" aria-labelledby="modalZoomTitle" hidden>
+    <div class="modal-image-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalZoomTitle">Figure Preview</h2>
+        <button class="modal-close" id="btnCloseZoomModal" aria-label="Close figure preview">✕</button>
+      </div>
+      <div class="modal-image-body">
+        <img id="zoomModalImg" src="" alt="High resolution preview">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/followups.js"></script>
+</body>
+</html>

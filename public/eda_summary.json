@@ -1,0 +1,685 @@
+{
+  "dataset_shape": {
+    "rows": 1500,
+    "columns": 21
+  },
+  "descriptive_statistics": {
+    "Customer_Age": {
+      "count": 1500,
+      "mean": 33.77,
+      "std": 9.18,
+      "median": 33.0,
+      "min": 19.0,
+      "q25": 27.0,
+      "q75": 40.0,
+      "max": 70.0,
+      "iqr": 13.0,
+      "skewness": 0.364,
+      "kurtosis": -0.218
+    },
+    "Quantity": {
+      "count": 1500,
+      "mean": 4.07,
+      "std": 5.32,
+      "median": 3.0,
+      "min": 1.0,
+      "q25": 2.0,
+      "q75": 4.0,
+      "max": 66.0,
+      "iqr": 2.0,
+      "skewness": 5.771,
+      "kurtosis": 50.957
+    },
+    "Unit_Price_USD": {
+      "count": 1500,
+      "mean": 1322.22,
+      "std": 923.88,
+      "median": 1177.46,
+      "min": 76.27,
+      "q25": 501.38,
+      "q75": 2015.27,
+      "max": 3992.34,
+      "iqr": 1513.89,
+      "skewness": 0.568,
+      "kurtosis": -0.748
+    },
+    "Discount_Percent": {
+      "count": 1500,
+      "mean": 8.65,
+      "std": 7.52,
+      "median": 10.0,
+      "min": 0.0,
+      "q25": 0.0,
+      "q75": 15.0,
+      "max": 60.0,
+      "iqr": 15.0,
+      "skewness": 1.611,
+      "kurtosis": 7.648
+    },
+    "Order_Amount_USD": {
+      "count": 1500,
+      "mean": 6298.27,
+      "std": 15886.72,
+      "median": 2680.06,
+      "min": 76.27,
+      "q25": 1153.07,
+      "q75": 6125.26,
+      "max": 227700.0,
+      "iqr": 4972.2,
+      "skewness": 9.321,
+      "kurtosis": 107.562
+    },
+    "Net_Revenue_USD": {
+      "count": 1500,
+      "mean": 5563.58,
+      "std": 13850.12,
+      "median": 2445.32,
+      "min": 64.83,
+      "q25": 1066.8,
+      "q75": 5570.18,
+      "max": 200376.0,
+      "iqr": 4503.38,
+      "skewness": 9.526,
+      "kurtosis": 111.534
+    },
+    "Profit_Margin_Percent": {
+      "count": 1500,
+      "mean": 30.79,
+      "std": 20.55,
+      "median": 25.38,
+      "min": -32.83,
+      "q25": 17.52,
+      "q75": 36.0,
+      "max": 89.64,
+      "iqr": 18.47,
+      "skewness": 0.973,
+      "kurtosis": 0.497
+    },
+    "Delivery_Time_Days": {
+      "count": 1500,
+      "mean": 4.35,
+      "std": 3.92,
+      "median": 3.0,
+      "min": 1.0,
+      "q25": 2.0,
+      "q75": 6.0,
+      "max": 34.0,
+      "iqr": 4.0,
+      "skewness": 2.5,
+      "kurtosis": 10.673
+    },
+    "Customer_Rating": {
+      "count": 1500,
+      "mean": 4.11,
+      "std": 1.04,
+      "median": 4.0,
+      "min": 1.0,
+      "q25": 4.0,
+      "q75": 5.0,
+      "max": 5.0,
+      "iqr": 1.0,
+      "skewness": -1.041,
+      "kurtosis": 0.285
+    },
+    "Churn_Risk_Score": {
+      "count": 1500,
+      "mean": 0.29,
+      "std": 0.17,
+      "median": 0.24,
+      "min": 0.06,
+      "q25": 0.16,
+      "q75": 0.37,
+      "max": 0.97,
+      "iqr": 0.21,
+      "skewness": 1.221,
+      "kurtosis": 1.113
+    }
+  },
+  "categorical_statistics": {
+    "Location_City": {
+      "unique_count": 8,
+      "top": "Bengaluru",
+      "top_freq": 408,
+      "breakdown": {
+        "Bengaluru": 408,
+        "Mumbai": 280,
+        "Delhi": 276,
+        "Hyderabad": 194,
+        "Pune": 128,
+        "Chennai": 89,
+        "Kolkata": 71,
+        "Ahmedabad": 54
+      }
+    },
+    "Customer_Segment": {
+      "unique_count": 3,
+      "top": "Consumer",
+      "top_freq": 748,
+      "breakdown": {
+        "Consumer": 748,
+        "Small Business": 529,
+        "Enterprise": 223
+      }
+    },
+    "Product_Category": {
+      "unique_count": 5,
+      "top": "AI Hardware & Servers",
+      "top_freq": 332,
+      "breakdown": {
+        "AI Hardware & Servers": 332,
+        "Developer Workstations": 318,
+        "Networking & Security": 310,
+        "Cloud Software & APIs": 273,
+        "Smart Office & IoT": 267
+      }
+    },
+    "Payment_Method": {
+      "unique_count": 4,
+      "top": "Credit Card",
+      "top_freq": 550,
+      "breakdown": {
+        "Credit Card": 550,
+        "Net Banking": 427,
+        "UPI Instant": 417,
+        "Corporate Wire": 106
+      }
+    },
+    "Gender": {
+      "unique_count": 3,
+      "top": "Female",
+      "top_freq": 739,
+      "breakdown": {
+        "Female": 739,
+        "Male": 720,
+        "Non-Binary": 41
+      }
+    }
+  },
+  "trends": {
+    "monthly": [
+      {
+        "Order_Month": "2025-01",
+        "total_revenue": 660252.77,
+        "total_orders": 108,
+        "avg_order_value": 6113.451574074074,
+        "avg_rating": 4.324074074074074
+      },
+      {
+        "Order_Month": "2025-02",
+        "total_revenue": 408295.5,
+        "total_orders": 100,
+        "avg_order_value": 4082.955,
+        "avg_rating": 4.06
+      },
+      {
+        "Order_Month": "2025-03",
+        "total_revenue": 825568.3,
+        "total_orders": 116,
+        "avg_order_value": 7116.968103448276,
+        "avg_rating": 4.094827586206897
+      },
+      {
+        "Order_Month": "2025-04",
+        "total_revenue": 535737.35,
+        "total_orders": 109,
+        "avg_order_value": 4915.021559633027,
+        "avg_rating": 4.137614678899083
+      },
+      {
+        "Order_Month": "2025-05",
+        "total_revenue": 480085.91000000003,
+        "total_orders": 99,
+        "avg_order_value": 4849.3526262626265,
+        "avg_rating": 4.181818181818182
+      },
+      {
+        "Order_Month": "2025-06",
+        "total_revenue": 423165.24,
+        "total_orders": 74,
+        "avg_order_value": 5718.449189189189,
+        "avg_rating": 4.162162162162162
+      },
+      {
+        "Order_Month": "2025-07",
+        "total_revenue": 813088.38,
+        "total_orders": 93,
+        "avg_order_value": 8742.885806451613,
+        "avg_rating": 4.10752688172043
+      },
+      {
+        "Order_Month": "2025-08",
+        "total_revenue": 549648.59,
+        "total_orders": 115,
+        "avg_order_value": 4779.552956521738,
+        "avg_rating": 4.130434782608695
+      },
+      {
+        "Order_Month": "2025-09",
+        "total_revenue": 353272.75,
+        "total_orders": 84,
+        "avg_order_value": 4205.627976190476,
+        "avg_rating": 3.9166666666666665
+      },
+      {
+        "Order_Month": "2025-10",
+        "total_revenue": 659483.07,
+        "total_orders": 122,
+        "avg_order_value": 5405.598934426229,
+        "avg_rating": 3.9672131147540983
+      },
+      {
+        "Order_Month": "2025-11",
+        "total_revenue": 424640.38,
+        "total_orders": 98,
+        "avg_order_value": 4333.065102040817,
+        "avg_rating": 4.081632653061225
+      },
+      {
+        "Order_Month": "2025-12",
+        "total_revenue": 594805.02,
+        "total_orders": 105,
+        "avg_order_value": 5664.809714285714,
+        "avg_rating": 4.190476190476191
+      },
+      {
+        "Order_Month": "2026-01",
+        "total_revenue": 592033.96,
+        "total_orders": 112,
+        "avg_order_value": 5286.0175,
+        "avg_rating": 4.008928571428571
+      },
+      {
+        "Order_Month": "2026-02",
+        "total_revenue": 387735.54,
+        "total_orders": 84,
+        "avg_order_value": 4615.899285714286,
+        "avg_rating": 4.226190476190476
+      },
+      {
+        "Order_Month": "2026-03",
+        "total_revenue": 637561.53,
+        "total_orders": 81,
+        "avg_order_value": 7871.13,
+        "avg_rating": 4.0
+      }
+    ],
+    "category_performance": [
+      {
+        "Product_Category": "AI Hardware & Servers",
+        "total_revenue": 4028825.69,
+        "avg_margin": 21.31117469879518,
+        "avg_discount": 8.605421686746988,
+        "order_count": 332
+      },
+      {
+        "Product_Category": "Developer Workstations",
+        "total_revenue": 2418463.93,
+        "avg_margin": 15.553427672955975,
+        "avg_discount": 7.955974842767295,
+        "order_count": 318
+      },
+      {
+        "Product_Category": "Networking & Security",
+        "total_revenue": 1047472.06,
+        "avg_margin": 30.093258064516128,
+        "avg_discount": 8.938709677419356,
+        "order_count": 310
+      },
+      {
+        "Product_Category": "Cloud Software & APIs",
+        "total_revenue": 531132.77,
+        "avg_margin": 67.3210989010989,
+        "avg_discount": 8.981684981684982,
+        "order_count": 273
+      },
+      {
+        "Product_Category": "Smart Office & IoT",
+        "total_revenue": 319479.84,
+        "avg_margin": 24.181385767790264,
+        "avg_discount": 8.853932584269662,
+        "order_count": 267
+      }
+    ],
+    "segment_performance": [
+      {
+        "Customer_Segment": "Consumer",
+        "total_revenue": 1736860.85,
+        "avg_order_value": 2322.006483957219,
+        "avg_churn_risk": 0.28108689839572193,
+        "customer_count": 413
+      },
+      {
+        "Customer_Segment": "Enterprise",
+        "total_revenue": 4439221.78,
+        "avg_order_value": 19906.82412556054,
+        "avg_churn_risk": 0.26885201793721974,
+        "customer_count": 184
+      },
+      {
+        "Customer_Segment": "Small Business",
+        "total_revenue": 2169291.66,
+        "avg_order_value": 4100.740378071834,
+        "avg_churn_risk": 0.29913232514177696,
+        "customer_count": 348
+      }
+    ],
+    "correlation_matrix": {
+      "Unit_Price_USD": {
+        "Unit_Price_USD": 1.0,
+        "Quantity": 0.186,
+        "Discount_Percent": 0.014,
+        "Net_Revenue_USD": 0.43,
+        "Profit_Margin_Percent": -0.469,
+        "Delivery_Time_Days": 0.003,
+        "Customer_Rating": 0.044,
+        "Churn_Risk_Score": -0.031
+      },
+      "Quantity": {
+        "Unit_Price_USD": 0.186,
+        "Quantity": 1.0,
+        "Discount_Percent": 0.283,
+        "Net_Revenue_USD": 0.865,
+        "Profit_Margin_Percent": -0.076,
+        "Delivery_Time_Days": -0.019,
+        "Customer_Rating": 0.051,
+        "Churn_Risk_Score": -0.055
+      },
+      "Discount_Percent": {
+        "Unit_Price_USD": 0.014,
+        "Quantity": 0.283,
+        "Discount_Percent": 1.0,
+        "Net_Revenue_USD": 0.13,
+        "Profit_Margin_Percent": -0.342,
+        "Delivery_Time_Days": -0.002,
+        "Customer_Rating": 0.019,
+        "Churn_Risk_Score": -0.011
+      },
+      "Net_Revenue_USD": {
+        "Unit_Price_USD": 0.43,
+        "Quantity": 0.865,
+        "Discount_Percent": 0.13,
+        "Net_Revenue_USD": 1.0,
+        "Profit_Margin_Percent": -0.146,
+        "Delivery_Time_Days": -0.021,
+        "Customer_Rating": 0.061,
+        "Churn_Risk_Score": -0.056
+      },
+      "Profit_Margin_Percent": {
+        "Unit_Price_USD": -0.469,
+        "Quantity": -0.076,
+        "Discount_Percent": -0.342,
+        "Net_Revenue_USD": -0.146,
+        "Profit_Margin_Percent": 1.0,
+        "Delivery_Time_Days": -0.007,
+        "Customer_Rating": -0.043,
+        "Churn_Risk_Score": 0.024
+      },
+      "Delivery_Time_Days": {
+        "Unit_Price_USD": 0.003,
+        "Quantity": -0.019,
+        "Discount_Percent": -0.002,
+        "Net_Revenue_USD": -0.021,
+        "Profit_Margin_Percent": -0.007,
+        "Delivery_Time_Days": 1.0,
+        "Customer_Rating": -0.625,
+        "Churn_Risk_Score": 0.822
+      },
+      "Customer_Rating": {
+        "Unit_Price_USD": 0.044,
+        "Quantity": 0.051,
+        "Discount_Percent": 0.019,
+        "Net_Revenue_USD": 0.061,
+        "Profit_Margin_Percent": -0.043,
+        "Delivery_Time_Days": -0.625,
+        "Customer_Rating": 1.0,
+        "Churn_Risk_Score": -0.927
+      },
+      "Churn_Risk_Score": {
+        "Unit_Price_USD": -0.031,
+        "Quantity": -0.055,
+        "Discount_Percent": -0.011,
+        "Net_Revenue_USD": -0.056,
+        "Profit_Margin_Percent": 0.024,
+        "Delivery_Time_Days": 0.822,
+        "Customer_Rating": -0.927,
+        "Churn_Risk_Score": 1.0
+      }
+    }
+  },
+  "outlier_analysis": {
+    "Net_Revenue_USD": {
+      "iqr_lower_fence": -5688.27,
+      "iqr_upper_fence": 12325.24,
+      "iqr_outlier_count": 119,
+      "iqr_outlier_pct": 7.93,
+      "z_score_outlier_count": 15,
+      "extreme_examples": [
+        {
+          "Order_ID": "ORD-10012",
+          "Customer_Segment": "Enterprise",
+          "Net_Revenue_USD": 31179.55,
+          "Product_Category": "AI Hardware & Servers"
+        },
+        {
+          "Order_ID": "ORD-10026",
+          "Customer_Segment": "Small Business",
+          "Net_Revenue_USD": 14198.34,
+          "Product_Category": "Developer Workstations"
+        },
+        {
+          "Order_ID": "ORD-10029",
+          "Customer_Segment": "Enterprise",
+          "Net_Revenue_USD": 14260.18,
+          "Product_Category": "Networking & Security"
+        }
+      ]
+    },
+    "Delivery_Time_Days": {
+      "iqr_lower_fence": -4.0,
+      "iqr_upper_fence": 12.0,
+      "iqr_outlier_count": 74,
+      "iqr_outlier_pct": 4.93,
+      "z_score_outlier_count": 12,
+      "extreme_examples": [
+        {
+          "Order_ID": "ORD-10076",
+          "Customer_Segment": "Small Business",
+          "Delivery_Time_Days": 29,
+          "Product_Category": "Developer Workstations"
+        },
+        {
+          "Order_ID": "ORD-10111",
+          "Customer_Segment": "Consumer",
+          "Delivery_Time_Days": 14,
+          "Product_Category": "Developer Workstations"
+        },
+        {
+          "Order_ID": "ORD-10113",
+          "Customer_Segment": "Enterprise",
+          "Delivery_Time_Days": 13,
+          "Product_Category": "Networking & Security"
+        }
+      ]
+    },
+    "Profit_Margin_Percent": {
+      "iqr_lower_fence": -10.18,
+      "iqr_upper_fence": 63.7,
+      "iqr_outlier_count": 202,
+      "iqr_outlier_pct": 13.47,
+      "z_score_outlier_count": 2,
+      "extreme_examples": [
+        {
+          "Order_ID": "ORD-10007",
+          "Customer_Segment": "Consumer",
+          "Profit_Margin_Percent": 74.42,
+          "Product_Category": "Cloud Software & APIs"
+        },
+        {
+          "Order_ID": "ORD-10009",
+          "Customer_Segment": "Consumer",
+          "Profit_Margin_Percent": 66.75,
+          "Product_Category": "Cloud Software & APIs"
+        },
+        {
+          "Order_ID": "ORD-10021",
+          "Customer_Segment": "Consumer",
+          "Profit_Margin_Percent": 72.14,
+          "Product_Category": "Cloud Software & APIs"
+        }
+      ]
+    }
+  },
+  "business_answers": {
+    "q1_discount_impact": [
+      {
+        "Discount_Tier": "0-5% Minimal",
+        "avg_margin": 36.475046012269935,
+        "negative_margin_count": 0,
+        "total_revenue": 2257164.33,
+        "orders": 652
+      },
+      {
+        "Discount_Tier": "6-12% Standard",
+        "avg_margin": 29.392743764172337,
+        "negative_margin_count": 0,
+        "total_revenue": 3479077.48,
+        "orders": 441
+      },
+      {
+        "Discount_Tier": "13-20% Competitive",
+        "avg_margin": 25.478963585434173,
+        "negative_margin_count": 0,
+        "total_revenue": 2093682.58,
+        "orders": 357
+      },
+      {
+        "Discount_Tier": "21-30% Aggressive",
+        "avg_margin": 14.575999999999999,
+        "negative_margin_count": 3,
+        "total_revenue": 487365.51,
+        "orders": 40
+      },
+      {
+        "Discount_Tier": ">30% Clearance",
+        "avg_margin": -23.766,
+        "negative_margin_count": 10,
+        "total_revenue": 28084.390000000003,
+        "orders": 10
+      }
+    ],
+    "q2_segment_profile": [
+      {
+        "Customer_Segment": "Consumer",
+        "total_revenue": 1736860.85,
+        "revenue_share": 20.81,
+        "avg_order_value": 2322.01,
+        "median_order_value": 1661.34,
+        "order_volume": 748
+      },
+      {
+        "Customer_Segment": "Enterprise",
+        "total_revenue": 4439221.78,
+        "revenue_share": 53.19,
+        "avg_order_value": 19906.82,
+        "median_order_value": 9591.41,
+        "order_volume": 223
+      },
+      {
+        "Customer_Segment": "Small Business",
+        "total_revenue": 2169291.66,
+        "revenue_share": 25.99,
+        "avg_order_value": 4100.74,
+        "median_order_value": 2658.82,
+        "order_volume": 529
+      }
+    ],
+    "q3_delivery_impact": [
+      {
+        "Delivery_Tier": "1-3 Days (Express)",
+        "avg_rating": 4.59,
+        "one_star_ratings": 0,
+        "avg_churn_risk": 0.18,
+        "orders": 810
+      },
+      {
+        "Delivery_Tier": "4-7 Days (Standard)",
+        "avg_rating": 4.08,
+        "one_star_ratings": 0,
+        "avg_churn_risk": 0.3,
+        "orders": 448
+      },
+      {
+        "Delivery_Tier": "8-14 Days (Delayed)",
+        "avg_rating": 2.57,
+        "one_star_ratings": 23,
+        "avg_churn_risk": 0.58,
+        "orders": 230
+      },
+      {
+        "Delivery_Tier": ">14 Days (Severe Anomaly)",
+        "avg_rating": 1.5,
+        "one_star_ratings": 6,
+        "avg_churn_risk": 0.92,
+        "orders": 12
+      }
+    ],
+    "q4_city_performance": [
+      {
+        "Location_City": "Bengaluru",
+        "total_revenue": 2135477.08,
+        "orders": 408,
+        "avg_rating": 4.11,
+        "avg_delivery_days": 4.3
+      },
+      {
+        "Location_City": "Mumbai",
+        "total_revenue": 1594637.7,
+        "orders": 280,
+        "avg_rating": 4.01,
+        "avg_delivery_days": 4.38
+      },
+      {
+        "Location_City": "Delhi",
+        "total_revenue": 1402437.3,
+        "orders": 276,
+        "avg_rating": 4.16,
+        "avg_delivery_days": 4.13
+      },
+      {
+        "Location_City": "Hyderabad",
+        "total_revenue": 1339522.21,
+        "orders": 194,
+        "avg_rating": 4.04,
+        "avg_delivery_days": 4.49
+      },
+      {
+        "Location_City": "Pune",
+        "total_revenue": 759824.87,
+        "orders": 128,
+        "avg_rating": 4.23,
+        "avg_delivery_days": 4.16
+      },
+      {
+        "Location_City": "Kolkata",
+        "total_revenue": 466794.25,
+        "orders": 71,
+        "avg_rating": 4.03,
+        "avg_delivery_days": 4.89
+      },
+      {
+        "Location_City": "Chennai",
+        "total_revenue": 396719.49,
+        "orders": 89,
+        "avg_rating": 4.31,
+        "avg_delivery_days": 4.62
+      },
+      {
+        "Location_City": "Ahmedabad",
+        "total_revenue": 249961.39,
+        "orders": 54,
+        "avg_rating": 4.0,
+        "avg_delivery_days": 4.39
+      }
+    ]
+  }
+}

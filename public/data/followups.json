@@ -1,0 +1,422 @@
+[
+  {
+    "Order_ID": "ORD-10064",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10076",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 29
+  },
+  {
+    "Order_ID": "ORD-10084",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10085",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10089",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Under review",
+    "Delivery_days": 12
+  },
+  {
+    "Order_ID": "ORD-10128",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 10
+  },
+  {
+    "Order_ID": "ORD-10162",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-10166",
+    "Segment": "Enterprise",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 12
+  },
+  {
+    "Order_ID": "ORD-10187",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 12
+  },
+  {
+    "Order_ID": "ORD-10202",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-10215",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Under review",
+    "Delivery_days": 10
+  },
+  {
+    "Order_ID": "ORD-10249",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10287",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-10308",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10311",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 24
+  },
+  {
+    "Order_ID": "ORD-10326",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Under review",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10350",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10385",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10436",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10461",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10473",
+    "Segment": "Enterprise",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10479",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10488",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10530",
+    "Segment": "Enterprise",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10558",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Under review",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10565",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10603",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Under review",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-10619",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-10634",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10671",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-10672",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10697",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10701",
+    "Segment": "Consumer",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Under review",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10702",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10721",
+    "Segment": "Enterprise",
+    "Issue": "Carrier handoff",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 31
+  },
+  {
+    "Order_ID": "ORD-10777",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10896",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 32
+  },
+  {
+    "Order_ID": "ORD-10966",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-10987",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-10989",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-11021",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Under review",
+    "Delivery_days": 10
+  },
+  {
+    "Order_ID": "ORD-11059",
+    "Segment": "Enterprise",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Under review",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11063",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11086",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 10
+  },
+  {
+    "Order_ID": "ORD-11090",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Under review",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-11123",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Under review",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11124",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-11145",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 12
+  },
+  {
+    "Order_ID": "ORD-11157",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-11247",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Resolved",
+    "Delivery_days": 12
+  },
+  {
+    "Order_ID": "ORD-11311",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11314",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 13
+  },
+  {
+    "Order_ID": "ORD-11343",
+    "Segment": "Consumer",
+    "Issue": "Carrier handoff",
+    "Outcome": "Under review",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11348",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11371",
+    "Segment": "Small Business",
+    "Issue": "Delayed dispatch",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 30
+  },
+  {
+    "Order_ID": "ORD-11375",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-11402",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Under review",
+    "Delivery_days": 8
+  },
+  {
+    "Order_ID": "ORD-11439",
+    "Segment": "Consumer",
+    "Issue": "Address check",
+    "Outcome": "Awaiting customer",
+    "Delivery_days": 14
+  },
+  {
+    "Order_ID": "ORD-11471",
+    "Segment": "Small Business",
+    "Issue": "Address check",
+    "Outcome": "Resolved",
+    "Delivery_days": 9
+  },
+  {
+    "Order_ID": "ORD-11493",
+    "Segment": "Small Business",
+    "Issue": "Carrier handoff",
+    "Outcome": "Resolved",
+    "Delivery_days": 8
+  }
+]
